@@ -1,25 +1,11 @@
 import React from 'react';
 import SearchComponent from './SearchComponent';
-import CityListComponent from './CityListComponent';
-
-/*  layout
-<App.js>
-    <SearchComponent />
-
-    <CityListComponent>
-        <CityComponent />
-        <CityComponent />
-        <CityComponent />
-    </CityListComponent>
-</App.js>
-*/
 
 function App() {
   return (
-    <div className="App">
-      <h1>Weather App</h1>
+    <div>
+      <h1 className="row justify-content-center my-5">Weather App</h1>
       <SearchComponent />
-      <CityListComponent />
     </div>
   );
 }
