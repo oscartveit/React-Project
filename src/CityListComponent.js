@@ -1,5 +1,5 @@
 import React from 'react';
-import CityComponent from './Citycomponent';
+import CityComponent from './Citycomponent.js';
 
 const CityListComponent = ({ savedLocations, onDelete }) => {
   // Om inga sparade platser finns visas ett meddelande
