@@ -48,6 +48,12 @@ function SearchComponent() {
     setSavedLocations(newLocations);
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
   return (
     <div className="container">
       <div className="row justify-content-center">
@@ -59,6 +65,7 @@ function SearchComponent() {
               placeholder="Search location..."
               value={searchInput}
               onChange={handleInputChange}
+              onKeyDown={handleKeyDown}
             />
             <button className="btn btn-primary" type="button" onClick={handleSearch}>Search</button>
           </div>
