@@ -2,29 +2,25 @@ import React, { useState, useEffect } from 'react';
 import CityListComponent from './CityListComponent';
 
 function SearchComponent() {
-  // State för sökning, API respons, och sparade platser
-  const [searchInput, setSearchInput] = useState(''); // Sökinmatning från användaren
-  const [weatherData, setWeatherData] = useState(null); // API-svar för vädret
+  const [searchInput, setSearchInput] = useState('');
+  const [weatherData, setWeatherData] = useState(null);
   const [savedLocations, setSavedLocations] = useState(() => {
-    // Hämta sparade platser från localStorage vid start
     const savedData = localStorage.getItem('savedLocations');
     return savedData ? JSON.parse(savedData) : [];
-  }); // Sparade platser
+  });
 
-  // Uppdatera sparade platser i localStorage vid förändring
   useEffect(() => {
     localStorage.setItem('savedLocations', JSON.stringify(savedLocations));
   }, [savedLocations]);
 
-  // Uppdatera sökinmatningen vid förändring
   const handleInputChange = (e) => {
     setSearchInput(e.target.value);
   };
 
-  // Hantera sökning och API-anrop
   const handleSearch = () => {
-    // Kontrollera om staden redan är sparad
-    if (savedLocations.some(location => location.name === searchInput)) {
+    const searchInputLowercase = searchInput.toLowerCase(); // Konvertera sökinmatningen till gemener
+
+    if (savedLocations.some(location => location.name.toLowerCase() === searchInputLowercase)) {
       alert('City already saved!');
       return;
     }
@@ -34,31 +30,28 @@ function SearchComponent() {
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        setWeatherData(data); // Uppdatera state med API-svaret
+        setWeatherData(data);
         const locationData = {
           name: data.location.name,
           temperature: data.current.temperature
         };
-        setSavedLocations(prevLocations => [...prevLocations, locationData]); // Spara platsen i state
-        setSearchInput(''); // Återställ sökinmatningen
+        setSavedLocations(prevLocations => [...prevLocations, locationData]);
+        setSearchInput('');
       })
       .catch(error => {
         console.error('API error:', error);
       });
   };
 
-  // Hantera borttagning av en plats
   const handleDelete = (location) => {
-    const newLocations = savedLocations.filter(loc => loc.name !== location.name);
+    const newLocations = savedLocations.filter(loc => loc.name.toLowerCase() !== location.name.toLowerCase());
     setSavedLocations(newLocations);
   };
-
 
   return (
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-md-10">
-          {/* Sökruta */}
           <div className="input-group mb-3">
             <input
               type="text"
@@ -69,8 +62,6 @@ function SearchComponent() {
             />
             <button className="btn btn-primary" type="button" onClick={handleSearch}>Search</button>
           </div>
-
-          {/* Sparade platser */}
           <h2 className="row justify-content-center my-5">Locations</h2>
           <CityListComponent savedLocations={savedLocations} onDelete={handleDelete} />
         </div>
@@ -80,15 +71,3 @@ function SearchComponent() {
 }
 
 export default SearchComponent;
-
-
-
-
-
-
-
-
-
-
-
-
