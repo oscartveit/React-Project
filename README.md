@@ -1,70 +1,9 @@
-# Getting Started with Create React App
+Projektet fokuserar på utvecklingen av en väderapplikation med en singular och primär sökfunktionalitet som möjliggör användarens förmåga att identifiera och erhålla temperaturinformation (i grader Celsius) för olika städer i Sverige för aktuell dag. Sökresultatet presenteras sedan för användaren. Dessutom implementeras en automatisk sparingsfunktion på webbplatsen, vilket resulterar i en katalog av tidigare efterfrågade städer och deras respektive temperaturdata. Slutligen erbjuds möjligheten för användaren att selektivt ta bort städer från denna lista som inte längre önskas återfinnas.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Gruppen valde React för att den är känt för sin modularitet och komponentbaserade arkitektur, vilket gör det lämpligt för att bygga användargränssnitt med återanvändbara och självständiga komponenter. Detta kan vara fördelaktigt i en applikation som en väderapp, där olika delar av gränssnittet kan behöva uppdateras och renderas dynamiskt baserat på användarens interaktioner.
 
-## Available Scripts
+Samtidigt erbjuder React en snabb och effektiv virtuell DOM (Document Object Model) för att hantera uppdateringar och renderingsprocessen på ett optimerat sätt. Detta kan vara speciellt viktigt i en realtidsapplikation som en väderapp, där temperaturdata kan uppdateras regelbundet och behöver visas för användaren utan fördröjningar.
 
-In the project directory, you can run:
+En annan anledning till att gruppen valde React och inte Angular eller Vue kan vara dess breda användning och stora utvecklingen. React har vuxit sig populärt och har en omfattande samling av dokumentation, exempel och tredjepartsbibliotek. Detta gör det enklare att hitta stöd och resurser när man utvecklar applikationen samt möjliggör en snabbare utvecklingsprocess.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Det är också viktigt att nämna att gruppen kände flexibilitet och enkelhet med React - den erbjuder en lättviktig och flexibel lösning för att bygga användargränssnitt. Det tillhandahåller enkla och tydliga regler för komponenthantering, vilket gör det enkelt att komma igång och bygga komponentbaserade applikationer. Angular och Vue har en mer omfattande och strukturerad syntax som kan ha en inlärningskurva för nya utvecklare.
